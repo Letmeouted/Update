@@ -1,0 +1,58 @@
+{
+  "name": "Update",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Letmeouted/Update.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build  --win --publish never",
+    "deploy": "electron-builder build  --win --publish always"
+  },
+  "build": {
+    "productName": "Update",
+    "files": [],
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "dmg": {
+      "title": "Update",
+      "icon": "build/Icon.icns"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": [
+        "dmg"
+      ],
+      "icon": "icons/Icon.icns",
+      "artifactName": "${productName}.v${version}.MacOS.${ext}"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ],
+      "artifactName": "${productName}.v${version}.Win_Portable.${ext}"
+    }
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Letmeouted",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.1",
+    "electron-builder": "^22.10.5"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.8"
+  }
+}
