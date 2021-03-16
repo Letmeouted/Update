@@ -8,7 +8,7 @@ const { app, BrowserWindow, ipcMain } = require("electron");
 const { autoUpdater } = require("electron-updater");
 let mainWindow;
 
-function creatWindow() {
+function createWindow() {
   mainWindow = new BrowserWindow({
     width: 600,
     height: 400,
@@ -25,7 +25,7 @@ function creatWindow() {
   autoUpdater.checkForUpdatesAndNotify();
 }
 app.on("ready", function () {
-  creatWindow();
+  createWindow();
 });
 app.on("window-all-closed", function () {
   if (process.platform !== "darwin") {
@@ -35,7 +35,7 @@ app.on("window-all-closed", function () {
 
 app.on("activate", function () {
   if (mainWindow === null) {
-    creatWindow();
+    createWindow();
   }
 });
 ipcMain.on("app_version", (event) => {
