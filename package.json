@@ -1,6 +1,6 @@
 {
   "name": "Update",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "repository": {
@@ -13,6 +13,7 @@
     "deploy": "electron-builder build  --win --publish always"
   },
   "build": {
+    "appId":"com.example.Update",
     "productName": "Update",
     "files": [],
     "directories": {
@@ -41,6 +42,11 @@
         }
       ],
       "artifactName": "${productName}.v${version}.Win_Portable.${ext}"
+    },
+    "publish":{
+      "provider":"github",
+      "owner":"Letmeouted",
+      "repo":"Update"
     }
   },
   "keywords": [
