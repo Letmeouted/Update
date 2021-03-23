@@ -15,7 +15,13 @@
   "build": {
     "appId":"com.example.Update",
     "productName": "Update",
-    "files": [],
+    "publish":[
+      {
+        "provider":"github",
+        "owner":"Letmeouted",
+        "repo":"Update"
+      }
+    ],
     "directories": {
       "buildResources": "build",
       "output": "dist"
@@ -35,18 +41,12 @@
     "win": {
       "target": [
         {
-          "target": "portable",
+          "target": "nsis",
           "arch": [
             "ia32"
           ]
         }
-      ],
-      "artifactName": "${productName}.v${version}.Win_Portable.${ext}"
-    },
-    "publish":{
-      "provider":"github",
-      "owner":"Letmeouted",
-      "repo":"Update"
+      ]
     }
   },
   "keywords": [

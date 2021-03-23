@@ -21,11 +21,10 @@ function createWindow() {
   mainWindow.on("closed", function () {
     mainWindow = null;
   });
-
-  autoUpdater.checkForUpdatesAndNotify();
 }
 app.on("ready", function () {
   createWindow();
+  autoUpdater.checkForUpdatesAndNotify();
 });
 app.on("window-all-closed", function () {
   if (process.platform !== "darwin") {
